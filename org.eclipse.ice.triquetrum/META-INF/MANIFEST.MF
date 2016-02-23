@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Triquetrum Workflow Plugin
+Bundle-SymbolicName: org.eclipse.ice.triquetrum;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.core.runtime.jobs,
+ org.eclipse.ice.datastructures.ICEObject,
+ org.eclipse.ice.datastructures.form,
+ org.eclipse.ice.io.serializable,
+ org.eclipse.ice.item,
+ org.eclipse.ice.item.jobLauncher,
+ org.eclipse.ice.item.model
+Export-Package: org.eclipse.ice.triquetrum.launcher,
+ org.eclipse.ice.triquetrum.model

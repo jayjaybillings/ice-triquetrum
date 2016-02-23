@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="TriquetrumWorkflowItemModelBuilder"
+         name="Triquetrum Workflow Item   Model"
+         point="org.eclipse.ice.item.itemBuilder">
+      <implementation
+            class="org.eclipse.ice.triquetrum.model.TriquetrumWorkflowItemModelBuilder">
+      </implementation>
+   </extension>
+   <extension
+         id="TriquetrumWorkflowItemLauncherBuilder"
+         name="Triquetrum Workflow Item   Launcher"
+         point="org.eclipse.ice.item.itemBuilder">
+      <implementation
+            class="org.eclipse.ice.triquetrum.launcher.TriquetrumWorkflowItemLauncherBuilder">
+      </implementation>
+   </extension>
+
+</plugin>
