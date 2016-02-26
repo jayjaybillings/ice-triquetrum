@@ -14,6 +14,16 @@ Import-Package: org.eclipse.core.resources,
  org.eclipse.ice.io.serializable,
  org.eclipse.ice.item,
  org.eclipse.ice.item.jobLauncher,
- org.eclipse.ice.item.model
+ org.eclipse.ice.item.model,
+ org.eclipse.triquetrum;version="1.0.0",
+ org.eclipse.triquetrum.workflow;version="1.0.0",
+ ptolemy.actor;version="11.0.0",
+ ptolemy.actor.lib;version="11.0.0",
+ ptolemy.actor.lib.gui;version="11.0.0",
+ ptolemy.data.expr;version="11.0.0",
+ ptolemy.domains.sdf.kernel;version="11.0.0",
+ ptolemy.kernel;version="11.0.0",
+ ptolemy.kernel.util;version="11.0.0"
 Export-Package: org.eclipse.ice.triquetrum.launcher,
  org.eclipse.ice.triquetrum.model
+Service-Component: OSGI-INF/WorkflowServiceTracker.xml
