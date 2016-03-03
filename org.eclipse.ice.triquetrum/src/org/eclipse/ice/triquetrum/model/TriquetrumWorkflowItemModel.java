@@ -1,5 +1,6 @@
 package org.eclipse.ice.triquetrum.model;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,7 @@ import org.eclipse.ice.item.model.Model;
 import org.eclipse.ice.triquetrum.WorkflowServiceTracker;
 import org.eclipse.triquetrum.workflow.WorkflowExecutionService;
 import org.eclipse.triquetrum.workflow.WorkflowExecutionService.StartMode;
+import org.eclipse.triquetrum.workflow.util.WorkflowUtils;
 
 import ptolemy.actor.CompositeActor;
 import ptolemy.actor.TypedCompositeActor;
@@ -53,10 +55,13 @@ public class TriquetrumWorkflowItemModel extends Model {
 
       form = new Form();
       form.setActionList(allowedActions);
+
+      // TODO this is where the WorkflowRepositoryService must be used to obtain the real list of available models
       models = new HashMap<>();
       try {
         models.put("hello", buildTrivialHelloCompositeActor());
         models.put("goodbye", buildTrivialGoodbyeCompositeActor());
+        models.put("reflectivity", buildICEDemoFlow());
       } catch (Exception e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
@@ -175,6 +180,11 @@ public class TriquetrumWorkflowItemModel extends Model {
       }
     }
     return parameterOverrides;
+  }
+
+  private CompositeActor buildICEDemoFlow() throws Exception {
+    URL modelFile = this.getClass().getResource("/ICEdemo1.moml");
+    return WorkflowUtils.readFrom(modelFile.toURI());
   }
 
   private CompositeActor buildTrivialHelloCompositeActor() throws Exception {

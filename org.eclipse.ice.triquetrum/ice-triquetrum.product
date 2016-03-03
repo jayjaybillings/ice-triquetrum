@@ -455,6 +455,7 @@
       <plugin id="org.eclipse.triquetrum.common"/>
       <plugin id="org.eclipse.triquetrum.processing.api"/>
       <plugin id="org.eclipse.triquetrum.validation.api"/>
+      <plugin id="org.eclipse.triquetrum.workflow.actor.plot"/>
       <plugin id="org.eclipse.triquetrum.workflow.actor.ui"/>
       <plugin id="org.eclipse.triquetrum.workflow.api"/>
       <plugin id="org.eclipse.triquetrum.workflow.execution.impl"/>
@@ -560,6 +561,7 @@
       <plugin id="org.eclipse.ice.triquetrum" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.ice.vibe" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
+      <plugin id="org.eclipse.triquetrum.workflow.actor.plot" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.triquetrum.workflow.actor.ui" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.triquetrum.workflow.execution.impl" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.triquetrum.workflow.repository.impl.filesystem" autoStart="true" startLevel="0" />
