@@ -8,7 +8,9 @@
     </property>
     <property name="filePath" class="ptolemy.data.expr.StringParameter" value="C:\data\triquetrum\ice-triquetrum\reflectivityModel_1_rfd.csv">
     </property>
-    <property name="smoothingFactor" class="ptolemy.data.expr.Parameter" value="10">
+    <property name="smoothingFactor" class="ptolemy.data.expr.Parameter" value="20">
+    </property>
+    <property name="_defaultInferredWidthTo1" class="ptolemy.data.expr.Parameter" value="true">
     </property>
     <property name="SDF director" class="ptolemy.domains.sdf.kernel.SDFDirector">
         <property name="iterations" class="ptolemy.data.expr.Parameter" value="100">
@@ -44,24 +46,18 @@
             <property name="multiport"/>
         </port>
     </entity>
-    <entity name="Raw data plot" class="org.eclipse.triquetrum.workflow.actor.plot.XYPlotActor">
-        <property name="title" class="ptolemy.data.expr.StringParameter" value="RData raw">
-        </property>
-        <property name="X name" class="ptolemy.data.expr.StringParameter" value="X">
-        </property>
-        <property name="Y name" class="ptolemy.data.expr.StringParameter" value="RData">
-        </property>
-    </entity>
-    <entity name="Smoothed data plot" class="org.eclipse.triquetrum.workflow.actor.plot.XYPlotActor">
-        <property name="title" class="ptolemy.data.expr.StringParameter" value="RData smoothed ( factor $smoothingFactor )">
-        </property>
-        <property name="X name" class="ptolemy.data.expr.StringParameter" value="X">
-        </property>
-        <property name="Y name" class="ptolemy.data.expr.StringParameter" value="RData">
-        </property>
-    </entity>
     <entity name="MovingAverage" class="ptolemy.actor.lib.MovingAverage">
         <property name="maxPastInputsToAverage" class="ptolemy.data.expr.Parameter" value="smoothingFactor">
+        </property>
+    </entity>
+    <entity name="RData plots" class="org.eclipse.triquetrum.workflow.actor.plot.XYPlotActor">
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="RData">
+        </property>
+        <property name="X name" class="ptolemy.data.expr.StringParameter" value="X">
+        </property>
+        <property name="Y name" class="ptolemy.data.expr.StringParameter" value="RData">
+        </property>
+        <property name="Series names" class="ptolemy.data.expr.StringParameter" value="raw,smooth ( factor $smoothingFactor )">
         </property>
     </entity>
     <relation name="_R2" class="ptolemy.actor.TypedIORelation">
@@ -69,10 +65,6 @@
         </property>
     </relation>
     <relation name="_R3" class="ptolemy.actor.TypedIORelation">
-        <property name="width" class="ptolemy.data.expr.Parameter" value="Auto">
-        </property>
-    </relation>
-    <relation name="_R5" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="Auto">
         </property>
     </relation>
@@ -84,12 +76,16 @@
         <property name="width" class="ptolemy.data.expr.Parameter" value="Auto">
         </property>
     </relation>
+    <relation name="_R5" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="Auto">
+        </property>
+    </relation>
     <link port="CSVReader.output" relation="_R2"/>
     <link port="RecordDisassembler.input" relation="_R2"/>
     <link port="RecordDisassembler.RData" relation="_R"/>
     <link port="RecordDisassembler.RData" relation="_R4"/>
-    <link port="Raw data plot.inputY" relation="_R4"/>
-    <link port="Smoothed data plot.inputY" relation="_R5"/>
     <link port="MovingAverage.input" relation="_R"/>
     <link port="MovingAverage.output" relation="_R5"/>
+    <link port="RData plots.inputY" relation="_R4"/>
+    <link port="RData plots.inputY" relation="_R5"/>
 </entity>

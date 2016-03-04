@@ -111,7 +111,12 @@ public class TriquetrumWorkflowItemModel extends Model {
       CompositeActor selectedWorkflow = models.get(newUserSelectedWorkflowName);
       if (selectedWorkflow != null) {
         for (Parameter p : selectedWorkflow.attributeList(Parameter.class)) {
-          StringEntry newEntry = new StringEntry();
+          IEntry newEntry = null;
+          if(p.getChoices() != null) {
+            newEntry = new DiscreteEntry(p.getChoices());
+          } else {
+            newEntry = new StringEntry();
+          }
           newEntry.setName(p.getName());
           newEntry.setDefaultValue(p.getExpression());
           workflowCfgComp.addEntry(newEntry);

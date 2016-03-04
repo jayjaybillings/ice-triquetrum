@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="mars" sequenceNumber="199">
+<?pde version="3.8"?><target name="mars" sequenceNumber="200">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="gov.lbnl.visit.swt" version="0.0.0"/>
@@ -128,14 +128,14 @@
 <repository location="http://download.eclipse.org/technology/swtbot/releases/latest"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.triquetrum.workflow.actor.plot.feature.source.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.workflow.actor.plot.feature.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.ptolemy.feature.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.workflow.core.feature.source.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.workflow.core.feature.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.ptolemy.feature.source.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.core.feature.source.feature.group" version="1.0.0.201603031443"/>
-<unit id="org.eclipse.triquetrum.core.feature.feature.group" version="1.0.0.201603031443"/>
+<unit id="org.eclipse.triquetrum.core.feature.source.feature.group" version="1.0.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.core.feature.feature.group" version="1.0.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.ptolemy.feature.source.feature.group" version="1.0.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.ice.feature.feature.group" version="0.1.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.workflow.core.feature.source.feature.group" version="1.0.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.workflow.core.feature.feature.group" version="1.0.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.ptolemy.feature.feature.group" version="1.0.0.201603041600"/>
+<unit id="org.eclipse.triquetrum.ice.feature.source.feature.group" version="0.1.0.201603041600"/>
 <repository location="file:/C:/data/build-folders/ice-triquetrum/org.eclipse.ice.target.mars/triq-p2/"/>
 </location>
 </locations>
